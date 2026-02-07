@@ -28,10 +28,15 @@ compile_commands.json
 # Ignore files generated for documentation
 /src/gen
 
+# Clang / clangd caches
+.cache/
+
 # Binaries
 *.o
 *.os
 *.so
+*.dylib
+*.dll
 *.obj
 *.bc
 *.pyc

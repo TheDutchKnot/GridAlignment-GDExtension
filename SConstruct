@@ -1,22 +1,11 @@
-#!/usr/bin/env python
 import os
 import sys
 
-from methods import print_error
-
-
-libname = "EXTENSION-NAME"
+libname = "GridAlignment"
 projectdir = "project"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
-
-# Build profiles can be used to decrease compile times.
-# You can either specify "disabled_classes", OR
-# explicitly specify "enabled_classes" which disables all other classes.
-# Modify the example file as needed and uncomment the line below or
-# manually specify the build_profile parameter when running SCons.
-
-# localEnv["build_profile"] = "build_profile.json"
+localEnv["build_profile"] = "build_profile.json"
 
 customs = ["custom.py"]
 customs = [os.path.abspath(path) for path in customs]
@@ -29,9 +18,8 @@ Help(opts.GenerateHelpText(localEnv))
 env = localEnv.Clone()
 
 if not (os.path.isdir("godot-cpp") and os.listdir("godot-cpp")):
-    print_error("""godot-cpp is not available within this folder, as Git submodules haven't been initialized.
-Run the following command to download godot-cpp:
-
+    print("""godot-cpp is not available within this folder, as Git submodules haven't been initialized.
+    Run the following command to download godot-cpp:
     git submodule update --init --recursive""")
     sys.exit(1)
 
