@@ -4,8 +4,9 @@
 
 using namespace godot;
 
-void GridAlignment::_bind_methods(){}
+void GridAlignment::_bind_methods() {
+}
 
-GridAlignment::GridAlignment(){
-    print_line("Hello World!");
+GridAlignment::GridAlignment() {
+	print_line("Hello World!");
 }

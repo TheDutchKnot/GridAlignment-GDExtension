@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <class name="ExampleClass" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
 	<brief_description>
-		Example class.
+		GridAlignment.
 	</brief_description>
 	<description>
-		An example class.
+		Its awesome.
 	</description>
 	<tutorials>
 	</tutorials>
@@ -13,7 +13,7 @@
 			<return type="void" />
 			<param index="0" name="variant" type="Variant" />
 			<description>
-				Print the type of the variant.
+				This doesn't exist actually.
 			</description>
 		</method>
 	</methods>
