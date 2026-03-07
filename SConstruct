@@ -26,17 +26,10 @@ if not (os.path.isdir("godot-cpp") and os.listdir("godot-cpp")):
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
 env.Append(CPPPATH=["src/"])
-sources = (
-    Glob("src/*.cpp") +
-    Glob("src/**/*.cpp")
-)
 
-if env["target"] in ["editor", "template_debug"]:
-    try:
-        doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))
-        sources.append(doc_data)
-    except AttributeError:
-        print("Not including class reference as we're targeting a pre-4.3 baseline.")
+build_dir = "build"
+VariantDir(build_dir + "/src", "src", duplicate=0)
+sources = Glob(build_dir + "/src/*.cpp") + Glob(build_dir + "/src/**/*.cpp")
 
 # .dev doesn't inhibit compatibility, so we don't need to key it.
 # .universal just means "compatible with all relevant arches" so we don't need to key it.

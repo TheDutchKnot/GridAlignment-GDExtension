@@ -1,7 +1,8 @@
 {
-	"_": "This is an example build profile and not used by default. See the SConstruct file for more information.",
+	"_": "godot-cpp classes that get bindings built for the gdextension.",
 	"type": "feature_profile",
 	"enabled_classes": [
+		"MeshInstance3D",
 		"Node2D",
 		"OS"
 	]

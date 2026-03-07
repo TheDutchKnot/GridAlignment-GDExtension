@@ -1,9 +1,6 @@
-#include "grid_alignment/grid_alignment.hpp"
+#include "grid_alignment_node.hpp"
 
-#include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/core/defs.hpp>
-#include <godot_cpp/godot.hpp>
 
 using namespace godot;
 

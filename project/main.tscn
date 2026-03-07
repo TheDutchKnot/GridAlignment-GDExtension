@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cypnepepotxa3"]
 
 [node name="GridAlignment" type="GridAlignment" unique_id=1141104417]
+
+[node name="GridAlignmentCell" type="GridAlignmentCell" parent="." unique_id=2120381932]

@@ -19,14 +19,8 @@ project/bin/windows/*
 !project/bin/*.gdextension
 .sconsign*.dblite
 
-# Ignore custom.py
-custom.py
-
 # Ignore generated compile_commands.json
 compile_commands.json
-
-# Ignore files generated for documentation
-/src/gen
 
 # Clang / clangd caches
 .cache/
@@ -53,15 +47,3 @@ compile_commands.json
 
 # Other stuff
 *.log
-
-# VSCode
-.vscode/*
-!.vscode/extensions.json
-.DS_Store
-
-# Jetbrains
-.idea/
-
-# Cmake
-cmake-build*
-CMakeUserPresets.json
