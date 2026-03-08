@@ -9,7 +9,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	GDREGISTER_CLASS(GridAlignment);
+	GDREGISTER_CLASS(GridAlignment::GridCube);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

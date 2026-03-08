@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cypnepepotxa3"]
 
-[node name="GridAlignment" type="GridAlignment" unique_id=1141104417]
+[ext_resource type="Script" uid="uid://cplwqdt8a6prq" path="res://main.gd" id="1_ig7tw"]
 
-[node name="GridAlignmentCell" type="GridAlignmentCell" parent="." unique_id=2120381932]
+[node name="GridCube" type="GridCube" unique_id=1824808083]
+speed = 0.0
+process_mode = 4
+script = ExtResource("1_ig7tw")

@@ -1,28 +1,40 @@
 #pragma once
 
-#include <godot_cpp/core/print_string.hpp>
-#include <godot_cpp/classes/wrapped.hpp>
+#include "grid_alignment_consts.hpp"
+
+#include "ease_batch/ease.hpp"
+#include "ease_batch/ease_batch.hpp"
+
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/classes/wrapped.hpp>
 
-class GridAlignment : public godot::Node {
-    GDCLASS(GridAlignment, godot::Node)
-
-    static constexpr int GRID_WIDTH = 15;
-    static constexpr int GRID_SLICE = GRID_WIDTH * GRID_WIDTH;
-
-    static constexpr float CELL_WIDTH = 2.0f;
-    static constexpr float CELL_DEPTH = 3.0f;
-
-    static constexpr int GRID_DEPTH = 
-	    static_cast<int>(GRID_WIDTH * CELL_WIDTH / CELL_DEPTH);
-
-    static constexpr int CELL_COUNT = GRID_SLICE * GRID_DEPTH;
-
-protected:
-    static void _bind_methods();
+namespace GridAlignment {
+class GridCube : public godot::Node {
+	GDCLASS(GridCube, godot::Node)
 
 public:
-    GridAlignment() {
-        godot::print_line("Hello World!");
-    }
+	void _process(const real_t delta);
+
+	void set_current_layer(const int value);
+	const int get_current_layer() const { return current_layer; }
+
+	const int get_ease() const { return to_int(ease); }
+	void set_ease(const int value) { ease = from_int(value); }
+
+	const float get_speed() const { return speed; }
+	void set_speed(const float value) { speed = value; }
+
+protected:
+	static void _bind_methods();
+
+private:
+	EaseBatch column_heights{ CUBE_CELL_SLICE };
+	Ease ease = Ease::Linear;
+	float speed = 1.0f;
+
+	bool is_running = false;
+	real_t elapsed = 0.0f;
+	float distance = 0.0f;
+	int current_layer = 0;
 };
+} //namespace GridAlignment

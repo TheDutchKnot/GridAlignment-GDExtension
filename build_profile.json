@@ -3,6 +3,8 @@
 	"type": "feature_profile",
 	"enabled_classes": [
 		"MeshInstance3D",
+		"ResourceSaver",
+		"PackedScene",
 		"Node2D",
 		"OS"
 	]
